@@ -6,11 +6,11 @@ Console.OutputEncoding = Encoding.UTF8;
 // Cria os modelos de hóspedes e cadastra na lista de hóspedes
 List<Pessoa> hospedes = new List<Pessoa>();
 
-Pessoa p1 = new Pessoa(nome: "Hóspede 1");
-Pessoa p2 = new Pessoa(nome: "Hóspede 2");
+Pessoa hospede_1 = new Pessoa(nome: "Hóspede 1");
+Pessoa hospede_2 = new Pessoa(nome: "Hóspede 2");
 
-hospedes.Add(p1);
-hospedes.Add(p2);
+hospedes.Add(hospede_1);
+hospedes.Add(hospede_2);
 
 // Cria a suíte
 Suite suite = new Suite(tipoSuite: "Premium", capacidade: 3, valorDiaria: 100);
