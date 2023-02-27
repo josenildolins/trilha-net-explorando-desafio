@@ -15,16 +15,15 @@ namespace DesafioProjetoHospedagem.Models
 
         public void CadastrarHospedes(List<Pessoa> hospedes)
         {
-            // TODO: Verificar se a capacidade é maior ou igual ao número de hóspedes sendo recebido
-            // *IMPLEMENTE AQUI*
-            if (true)
+            bool suiteComportaOsHospedes = ValidarCapacidade(hospedes.Count, Suite.Capacidade);
+            
+            if (suiteComportaOsHospedes)
             {
                 Hospedes = hospedes;
             }
             else
             {
-                // TODO: Retornar uma exception caso a capacidade seja menor que o número de hóspedes recebido
-                // *IMPLEMENTE AQUI*
+                throw new InvalidOperationException("A quantidade de hóspedes não pode exceder a capacidade da Suíte");
             }
         }
 
@@ -55,6 +54,15 @@ namespace DesafioProjetoHospedagem.Models
             }
 
             return valor;
+        }
+
+        public bool ValidarCapacidade(int quantidadeHospedes, int capacidade)
+        {
+            if (quantidadeHospedes <= capacidade)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
