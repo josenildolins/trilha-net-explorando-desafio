@@ -56,7 +56,7 @@ namespace DesafioProjetoHospedagem.Models
             return valor;
         }
 
-        public bool ValidarCapacidade(int quantidadeHospedes, int capacidade)
+        private bool ValidarCapacidade(int quantidadeHospedes, int capacidade)
         {
             if (quantidadeHospedes <= capacidade)
             {
